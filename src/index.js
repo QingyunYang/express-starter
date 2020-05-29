@@ -5,7 +5,6 @@ import bodyParser from 'body-parser'
 import sequelize from './sequelize'
 
 dotenv.config()
-console.log(process.env.NODE_ENV)
 
 const app = express()
 
