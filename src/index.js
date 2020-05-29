@@ -1,12 +1,25 @@
 import express from 'express'
 import bodyParser from 'body-parser'
+import dotenv from 'dotenv'
+import sequelize from './sequelize'
+
+dotenv.config()
+console.log(process.env.NODE_ENV)
 
 const app = express()
 
 app.use(bodyParser.json())
 
-const port = 3000
-app.listen(port, () => {
-  const message = `server is started on port ${port}`
+app.listen(process.env.PORT, () => {
+  const message = `server is started on port ${process.env.PORT}`
   console.log(message)
 })
+
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  })
