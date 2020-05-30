@@ -1,9 +1,10 @@
 import { Router } from 'express'
-import * as controller from './controller'
+import findAll from './controller/findAll'
+import create from './controller/create'
 
 const router = Router()
 
-router.get('/findAll', controller.findAll)
-router.get('/create', controller.create)
+router.post('/findAll', findAll)
+router.post('/create', create)
 
 export default router
