@@ -13,8 +13,8 @@ const swagger = swaggerGenerator(app);
 const options = {
   swaggerDefinition: {
     info: {
-      description: "This is a sample server",
-      title: "Swagger",
+      description: "express-starter接口文档",
+      title: "接口文档",
       version: "1.0.0",
     },
     host: "localhost:3000",
